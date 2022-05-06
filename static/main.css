@@ -1,0 +1,150 @@
+#hello_div {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: blue;
+}
+.search-btn {
+  border-color: rgb(3, 83, 255);
+  background-color: white;
+}
+.welcome {
+  font-size: xx-large;
+  font-weight: bold;
+  padding: 20px;
+  border-bottom: 1px solid;
+  border-color: black;
+}
+.roster-header {
+  font-size: x-large;
+  font-weight: bold;
+  padding: 20px;
+  border-bottom: 1px solid;
+  border-color: black;
+}
+.team-header {
+  font-weight: bold;
+  padding-left: 30px;
+  padding-top: 20px;
+  font-size: large;
+}
+hr {
+  margin-top: 5px;
+}
+.player-entries {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid;
+  border-color: lightgrey;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.roster {
+  border: 1px solid;
+  border-color: lightgray;
+  margin-top: 50px;
+  border-radius: 10px;
+}
+.sub {
+  font-size: large;
+  padding: 15px;
+}
+.top {
+  margin-top: 10px;
+}
+.results-page {
+  font-weight: bold;
+  font-size: xx-large;
+}
+#name {
+  font-size: x-large;
+}
+#picture {
+  width: 40%;
+  height: 40%;
+}
+.summary {
+  font-size: small;
+}
+#summary {
+  width: 60%;
+}
+
+.player-names {
+  font-weight: bold;
+  font-size: large;
+}
+.player-image {
+  border-radius: 5px;
+}
+.player-sub {
+  font-size: small;
+}
+.logo {
+  height: 35%;
+}
+.player-stats {
+  border-top: 1px solid;
+  border-color: lightgrey;
+}
+.bottom {
+  padding-bottom: 10px;
+}
+.right {
+  border-right: 1px solid;
+  border-color: lightgray;
+}
+.center {
+  text-align: center;
+}
+.stat {
+  font-size: smalls;
+}
+.search-header {
+  font-size: x-large;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.highlight {
+  background: #ffd900;
+  padding: 1px;
+  border: #ffd900 dotted 1px;
+}
+button.No {
+  background: none;
+  border: none;
+  font-weight: bold;
+}
+button.Yes {
+  background: none;
+  border: none;
+  font-weight: bold;
+}
+.btn-primary {
+  background-color: white;
+  color: rgb(156, 156, 156);
+}
+.bg-light {
+  background-color: rgb(0, 52, 150) !important;
+}
+.nav-link {
+  color: white !important;
+}
+.navbar-light .navbar-brand {
+  color: white !important;
+}
+.back {
+  background-color: lightgray;
+}
+.edit-btn {
+  margin-top: 20px;
+}
+.btn-edit {
+  background-color: rgb(0, 68, 255);
+  color: rgb(175, 175, 175);
+}
+.search-btn {
+  color: rgb(97, 96, 96);
+}

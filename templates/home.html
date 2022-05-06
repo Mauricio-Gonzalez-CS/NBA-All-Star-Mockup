@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'people.js') }}"></script>
+    
+    <script>
+        let data = {{popular|tojson}} 
+        console.log(data)
+    </script>
+
+<div class="container">
+        <div class="col roster">
+            <div class="row">
+                <div class="col welcome">NBA All-Stars 2022</div>
+            </div>
+            <div class="row">
+                <div class="col sub"> The matchup between Team LeBron and Team Durant in the 71st NBA All-Star Game will take place on Sunday, Feb. 20 at Rocket Mortgage FieldHouse in Cleveland, airing live at 8 p.m. ET on TNT & TBS.</div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="container-fluid top">
+        <div class="col roster">
+            <div class="row">
+                <div class="col roster-header"> All-Star Roster</div>
+            </div>
+            <div class="row">
+                <div class="col-6 team-header">
+                    Team Durant
+                    <hr>
+                </div>
+                <div class="col-6 team-header">
+                    Team Lebron
+                    <hr>
+                </div>
+
+                {% for i in popular %}
+                <div class="col-6">
+                    <div class="row player-entries">
+                        <div class="col-5">
+                            <a href='view/{{i.id}}'>
+                            <img src={{i.image}} class="img-fluid player-image" alt="photo of {{i.name}}">
+                            </a>
+                        </div>
+                        <div class="col-5">
+                            <div class="col player-names">
+                                {{i.name}}
+                            </div>
+                            <div class="col player-sub">
+                                {{i.number}} | {{i.position}}
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <img src={{i.logo}} class="img-fluid logo">
+                        </div>
+                        <div class="col top center">
+                            <div class="row player-stats">                       
+                                <div class="col-4 right">
+                                    <span class="stat">PPG</span> <br>
+                                    <b>{{i.ppg}}</b>
+                                </div>
+                        
+                                <div class="col-4 right">
+                                    <span class="stat">APG</span> <br>
+                                    <b>{{i.apg}}</b>
+                                </div>
+                                
+                                <div class="col-4">
+                                    <span class="stat">RPG</span> <br>
+                                    <b>{{i.rpg}}</b>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                    
+                </div>
+                    {% endfor %} 
+                
+            </div>    
+        </div>    
+</div>
+
+
+{% endblock %}

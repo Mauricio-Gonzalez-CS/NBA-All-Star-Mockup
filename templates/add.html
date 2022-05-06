@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+
+
+{% block content %}
+
+<script>
+    let data = {{data|tojson}}
+    let message = {{success|tojson}}
+    console.log(message)
+    
+    $(document).ready(function(){
+        if(message !== ""){
+        $(".link").html("<b>You made a successful entry</b> <br> <a href='view/{{data}}'> View New Entry Here </a>") 
+        $('#Pname').focus()
+    }
+    })
+</script>
+<div class="link">
+</div>
+<form id="add" name="addForm"  method="post">
+    <br>
+    <label for="name">Name:</label><br>
+    <input type="text" id="Pname" name="name" placeholder="Full Name" required><br><br>
+    
+    <label for="img">Image:</label><br>
+    <input type="text" id="image" name="image" placeholder="Image URL" required><br><br>
+    
+    <label for="sum">Summary:</label><br>
+    <input type="text" id="sum" name="summary" placeholder="A bit about the player" required><br><br>
+    
+    <label for="team">Team:</label><br>
+    <input type="text" id="team" name="team" placeholder="Player's Team" required><br><br>
+    
+    <label for="pos">Position:</label><br>
+    <input type="text" id="position" name="position" placeholder="Player's Position" required><br><br>
+    
+    <label for="height">Height:</label><br>
+    <input type="text" id="height" name="height" placeholder="Player's Height" required><br><br>
+    
+    <label for="age">Age:</label><br>
+    <input type="text" id="age" name="age" placeholder="Player's Age" required><br><br>
+    
+    <label for="year">Year:</label><br>
+    <input type="text" id="year" name="year" placeholder="Year Player Was Born" required><br><br>
+    
+    <label for="parents">Parents:</label><br>
+    <input type="text" id="parents" name="parents" placeholder="Player's Parents" required><br><br>
+    <button type="submit" id="btn-sub" class="btn btn-primary">Submit</button>
+  </form>
+
+
+
+{% endblock %}

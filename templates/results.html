@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="results-page">
+    {{count}} Results for "{{search}}"
+</div> 
+
+{{sorry}}
+<script>
+    let data = {{search|tojson}} 
+    let count = {{count|tojson}}
+    function replaceText() {
+        $(".nba_results_container").find(".highlight").removeClass("highlight");
+
+        var searchword = data
+
+        var custfilter = new RegExp(searchword, "ig");
+        var repstr = "<span class='highlight'>" + searchword + "</span>";
+
+        if (searchword != "") {
+            $(".nba_results_container").each(function() {
+                $(this).html($(this).html().replace(custfilter, repstr));
+            })
+        }
+    }
+    $(document).ready(function(){
+        if (count==0) {
+            $(".nba_results_container").empty()
+        }
+        replaceText()
+        
+    })
+</script>
+
+<div class = "nba_results_container">
+    <div id="names"> 
+        <div class="search-header">Names:</div>
+        <div> There are {{countN}} Results: </div>
+    <ul>
+         {%for i in player %}
+           <a href='view/{{i.id}}'> {{i.name}} </a> <br>
+        {% endfor %}    
+    </ul>
+    </div>
+
+    <div id="teams"> 
+        <div class="search-header">Teams:</div>
+        <div> There are {{countT}} Results: </div>
+    <ul>
+         {%for i in team %}
+           <a href='view/{{i.id}}'> {{i.team}} </a> <br>
+        {% endfor %}    
+    </ul>
+    </div>
+
+    <div id="parents"> 
+        <div class="search-header">Parents:</div>
+        <div> There are {{countP}} Results: </div>
+    <ul>
+         {%for i in parents%}
+           {{i}} <br>
+        {% endfor %}    
+    </ul>
+    </div>
+</div>
+
+{% endblock %}

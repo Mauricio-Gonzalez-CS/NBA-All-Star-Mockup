@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<script>
+let id = {{id|tojson}}
+$(document).ready(function(){
+    $('#edit').click(function(){
+        window.location.href='/edit/' + id;
+    })
+})
+</script>
+<div class="container">
+<div class="row">
+    <div id="name" class ='col-4'>
+        {% for i in layout %}
+            {{i.name}}
+            {% endfor %}  
+    </div>
+    <div class="col-5"></div>
+    <div class="col-3">
+        <div class="edit-btn">
+        <button class="btn btn-edit" id='edit'>Edit</button>
+        </div>
+    </div>
+</div>
+
+<div id="picture">
+    {% for i in layout %}
+    <img src={{i.image}} class="img-fluid">
+        {% endfor %} 
+</div> <br>
+
+<div id="summary">
+    <b>Summary:</b> <br>
+    {% for i in layout %}
+        <span class="summary"> {{i.summary}} </span>
+        {% endfor %}  
+</div><br> 
+
+<div id="team">
+    <b>Team:</b> 
+    {% for i in layout %}
+        {{i.team}}
+        {% endfor %}  
+</div>
+
+<div id="position">
+    <b>Position:</b> 
+    {% for i in layout %}
+        {{i.position}}
+        {% endfor %}  
+</div>
+
+<div id="height">
+    <b>Height:</b> 
+    {% for i in layout %}
+        {{i.height}}
+        {% endfor %}  
+</div>
+
+<div id="age">
+    <b>Age:</b> 
+    {% for i in layout %}
+        {{i.age}}
+        {% endfor %}  
+</div>
+
+<div id="year">
+    <b>Year:</b>
+    {% for i in layout %}
+        {{i.year}}
+        {% endfor %}  
+</div>
+
+<div id="parents">
+    <b>Parents:</b>
+    {% for i in layout %}
+        {{ i.parents|join(', ') }}
+        {% endfor %} 
+  
+</div>
+
+{% endblock %}
+</div>
+
+
+
